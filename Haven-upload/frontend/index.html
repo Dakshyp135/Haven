@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10251f">
+  <title>Haven | Hotel Management</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./"><span class="brand-mark">H</span><span>HAVEN<small>HOTEL MANAGEMENT</small></span></a>
+    <span class="top-note"><i></i><span id="connection-label">Connecting to hotel data</span></span>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="eyebrow">PROPERTY OVERVIEW <span id="today"></span></div>
+      <h1>Make every stay<br><em>feel like home.</em></h1>
+      <p>One calm place to manage rooms, welcome guests, and plan their next stay.</p>
+      <div class="hero-actions"><a href="#rooms" class="button button-light">Explore rooms <span>↘</span></a><a href="#booking" class="text-link">Create a reservation <span>↗</span></a></div>
+      <div class="hero-art" aria-hidden="true"><div class="sun"></div><div class="arch"></div><div class="plant plant-one"></div><div class="plant plant-two"></div></div>
+    </section>
+    <section class="stats" aria-label="Property summary">
+      <article><span class="stat-label">ROOMS LISTED</span><strong id="room-count">—</strong><span>Across all room types</span></article>
+      <article><span class="stat-label">AVAILABLE NOW</span><strong id="available-count">—</strong><span>Ready to welcome a guest</span></article>
+      <article><span class="stat-label">REGISTERED GUESTS</span><strong id="guest-count">—</strong><span>In your guest book</span></article>
+    </section>
+    <section id="rooms" class="section">
+      <div class="section-heading"><div><div class="eyebrow">THE PROPERTY</div><h2>Rooms &amp; suites</h2></div><span class="section-note">Live room inventory</span></div>
+      <div id="rooms-grid" class="rooms-grid"><div class="empty-state">Loading rooms…</div></div>
+    </section>
+    <section id="booking" class="booking-section">
+      <div class="booking-intro"><div class="eyebrow">A WARM WELCOME</div><h2>Plan their<br><em>next stay.</em></h2><p>Add a guest to your register, then save a reservation for them.</p></div>
+      <form id="booking-form" class="booking-form">
+        <div class="form-title">New reservation <span>01 — 02</span></div>
+        <div class="field-row">
+          <label>Guest name<input name="name" required placeholder="e.g. Alex Morgan"></label>
+          <label>Guest type<select name="type"><option value="REGULAR">Regular</option><option value="LOYALTY">Loyalty</option></select></label>
+        </div>
+        <div class="field-row">
+          <label>Email address<input name="email" type="email" placeholder="alex@example.com"></label>
+          <label>Phone number<input name="phone" type="tel" placeholder="+1 555 000 0000"></label>
+        </div>
+        <div class="field-row">
+          <label>Room<select name="roomId" id="room-select" required><option value="">Choose a room</option></select></label>
+          <label>Check-in<input name="checkIn" type="date" required></label>
+        </div>
+        <div class="field-row">
+          <label>Check-out<input name="checkOut" type="date" required></label>
+          <div class="submit-wrap"><button type="submit" class="button button-dark">Save reservation <span>↗</span></button></div>
+        </div>
+        <div id="form-message" class="form-message" role="status"></div>
+        <p class="privacy-note">Guest details are saved to your connected hotel database.</p>
+      </form>
+    </section>
+  </main>
+  <footer><a class="brand footer-brand" href="./"><span class="brand-mark">H</span><span>HAVEN<small>HOTEL MANAGEMENT</small></span></a><span>Thoughtful stays start here.</span></footer>
+  <script src="./config.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
